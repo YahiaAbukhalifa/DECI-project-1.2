@@ -3,13 +3,18 @@ html {
   width: 100%;
 }
 body {
-  font-family: "Cedarville Cursive", cursive;
   background-color: #f2f2f2;
+  font-family: "Cedarville Cursive", cursive;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+}
+@media (max-width: 600px){
+  body{
+    font-family: monospace;
+  }
 }
 .background {
   position: absolute;
@@ -94,4 +99,10 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+@media (max-width: 600px){
+  .info{
+    display: flex;
+    flex-direction: column;
+  }
 }

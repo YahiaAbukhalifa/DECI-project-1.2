@@ -107,3 +107,26 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("No user preferences found in local storage.");
   }
 });
+document.addEventListener("DOMContentLoaded", function() {
+  // Fetch user data from local storage
+  const userData = JSON.parse(localStorage.getItem('db'));
+
+  // Check if userData exists and is in the correct format
+  if (userData && Array.isArray(userData) && userData.length > 0) {
+    const userAllergy = userData[0].allergy ? userData[0].allergy.toLowerCase() : '';
+
+    const mealItems = document.querySelectorAll('li[data-allergy]');
+
+    mealItems.forEach(item => {
+      const itemAllergy = item.getAttribute('data-allergy').toLowerCase();
+
+      if (userAllergy === 'none') {
+        item.style.display = ''; // Display all meals if user allergy is 'none'
+      } else if (itemAllergy === userAllergy) {
+        item.style.display = 'none'; // Hide meals with the specified allergy
+      } else {
+        item.style.display = ''; // Display meals without the specified allergy
+      }
+    });
+  }
+});
