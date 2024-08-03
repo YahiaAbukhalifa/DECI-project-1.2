@@ -136,7 +136,7 @@ button:hover {
   margin-top: 20px;
   font-weight: bold;
 }
-#specificMeal{
+#specificMeal , #allergy{
   width: 100%;
   height: fit-content;
   display: flex;

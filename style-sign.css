@@ -17,7 +17,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("./images/background-banner.jpg") no-repeat center center fixed;
+  background: url("./images/background-banner.jpg") no-repeat center center
+    fixed;
   background-size: cover;
   filter: blur(5px);
   z-index: 0;
@@ -85,12 +86,13 @@ button {
 button:hover {
   background-color: #125c13;
 }
-.info{
+.info {
   display: grid;
-  grid-template-columns: repeat(2 , 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
-.right-part , .left-part{
+.right-part,
+.left-part {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
