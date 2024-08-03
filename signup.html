@@ -34,8 +34,6 @@
                             <option value="" disabled selected>Select your type</option>
                             <option value="Type 1">Type 1</option>
                             <option value="Type 2">Type 2</option>
-                            <option value="Gestational">Gestational</option>
-                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <div class="right-part">
@@ -66,15 +64,32 @@
                             </div>
                         </div>
                         <label for="allergy">Do you suffer from any allergy?</label>
-                        <select id="allergy" name="allergy" required>
-                            <option value="" disabled selected>Select your allergy</option>
-                            <option value="None">None</option>
-                            <option value="Peanuts">Peanuts</option>
-                            <option value="Eggs">Eggs</option>
-                            <option value="Lactose">Lactose</option>
-                            <option value="Nuts">Nuts</option>
-                            <option value="Soy">Soy</option>
-                        </select>
+                        <div id="allergy">
+                            <div>
+                                <input type="checkbox" id="none" name="allergy" value="None">
+                                <label for="none">None</label><br>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="peanuts" name="allergy" value="Peanuts">
+                                <label for="peanuts">Peanuts</label><br>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="eggs" name="allergy" value="Eggs">
+                                <label for="eggs">Eggs</label><br>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="lactose" name="allergy" value="Lactose">
+                                <label for="lactose">Lactose</label><br>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="nuts" name="allergy" value="Nuts">
+                                <label for="nuts">Nuts</label><br>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="soy" name="allergy" value="Soy">
+                                <label for="soy">Soy</label><br>
+                            </div>
+                        </div>
                         <label for="otherDisorders">Other disorders?</label>
                         <select id="otherDisorders" name="otherDisorders" required>
                             <option value="" disabled selected>Select your disorder</option>

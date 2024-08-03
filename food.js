@@ -113,20 +113,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Check if userData exists and is in the correct format
   if (userData && Array.isArray(userData) && userData.length > 0) {
-    const userAllergy = userData[0].allergy ? userData[0].allergy.toLowerCase() : '';
+      const userAllergies = userData[0].allergy ? userData[0].allergy.map(allergy => allergy.toLowerCase()) : [];
 
-    const mealItems = document.querySelectorAll('li[data-allergy]');
+      const mealItems = document.querySelectorAll('li[data-allergy]');
 
-    mealItems.forEach(item => {
-      const itemAllergy = item.getAttribute('data-allergy').toLowerCase();
+      mealItems.forEach(item => {
+          const itemAllergies = item.getAttribute('data-allergy').toLowerCase().split(',');
 
-      if (userAllergy === 'none') {
-        item.style.display = ''; // Display all meals if user allergy is 'none'
-      } else if (itemAllergy === userAllergy) {
-        item.style.display = 'none'; // Hide meals with the specified allergy
-      } else {
-        item.style.display = ''; // Display meals without the specified allergy
-      }
-    });
+          if (userAllergies.includes('none')) {
+              item.style.display = ''; // Display all meals if user has no allergies
+          } else if (itemAllergies.some(allergy => userAllergies.includes(allergy))) {
+              item.style.display = 'none'; // Hide meals with the specified allergies
+          } else {
+              item.style.display = ''; // Display meals without the specified allergies
+          }
+      });
   }
 });
